@@ -1,0 +1,10 @@
+{
+  "socials": {
+    "instagram": "<link here>",
+    "twitter": "<link here>",
+    "discord": "<link here>"
+  },
+  "domain": "example.com",
+  "email": "mailto:xyz@example.com",
+  "loginMaxAge": 1296000
+}

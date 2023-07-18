@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placeholder Title</title>
+
+    <link rel="stylesheet" href="/css/home.css">
+
+    <!-- add own fontawesome link here -->
+    <script src="https://kit.fontawesome.com/4d3f484b6f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Navbar - Sticky Left -->
+        <nav>
+            <div class="branding nav-item">
+                <a href="/" class="branding-container">
+                    <img class="branding-img" src="/Assets/imgs/logo.png" alt="">
+                    <h1 class="branding-name">Valo News</h1>
+                </a>
+            </div>
+
+            <div class="menu nav-item">
+                <ul>
+                    <li class="selected">
+                        <a href="/" class="menu-item">
+                            <img class="menu-icons" src="/Assets/icons/home.svg" alt="home-icon">
+                            <h2 class="menu-item-text">Home</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/news" class="menu-item">
+                            <img class="menu-icons" src="/Assets/icons/trello.svg" alt="news-icon">
+                            <h2 class="menu-item-text">News</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/matches" class="menu-item">
+                            <img class="menu-icons" src="/Assets/icons/trello.svg" alt="matches-icon">
+                            <h2 class="menu-item-text">Matches</h2>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main content - Center -->
+        <main>
+            <!-- Headline - Banner img -->
+            <a href="" class="headline-container">
+                <div class="headline-wrapper">
+                    <div class="headline-bell">
+                        <img src="/Assets/icons/bell.svg" alt="bell-img">
+                    </div>
+                    <div class="headline-data">
+                        <div class="headline-news">
+                            VCT Champions 2023 all set to be in LA.
+                        </div>
+                        <div class="headline-publish-date">
+                            Published 14:00 IST, 3.07.23
+                        </div>
+                    </div>
+                </div>
+                <div class="headline-title">
+                    LATEST NEWS
+                </div>
+            </a>
+
+            <!-- Section - More news-->
+            <div class="more-news-container">
+                <div class="more-news-wrapper">
+                    <div class="more-news-heading">
+                        MORE NEWS
+                    </div>
+                    <div class="news-wrapper">
+                        <% for(let i=0; i<3; i++) { %>
+                            <a href="" class="news">
+                                <div class="news-img"></div>
+                                <div class="news-data">
+                                    <div class="news-title">
+                                        THE ROAD TO CHAMPIONS 2023
+                                    </div>
+                                    <div class="news-publish-data">
+                                        <div class="news-publish-icon">
+                                            <img src="/Assets/icons/calendar.svg" alt="calendar-icon">
+                                        </div>
+                                        <div class="news-publish-date">
+                                            Today, 01:44
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <% } %>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Section - Tournaments -->
+            <div class="tournaments-container">
+                <div class="tournaments-heading">
+                    TOURNAMENTS
+                </div>
+                <div class="tournaments-wrapper-grid">
+
+                    <% for(let i=0; i<5; i++) { %>
+                        <a href="" class="tournament-box">
+                            <div class="tournament-img-container">
+                                <img class="tournament-img" src="/Assets/imgs/vct-masters.png" />
+                            </div>
+                            <div class="tournament-data">
+                                <div class="tournament-title">
+                                    Valorant Masters
+                                </div>
+                                <div class="tournament-date">
+                                    Today, Starts 20:35
+                                </div>
+                            </div>
+                        </a>
+                        <% } %>
+
+
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar/Advertisment - Sticky Right -->
+        <article>
+            <div class="matches-container">
+                <div class="matches-heading-wrapper">
+                    <div class="matches-heading-data">
+                        <div class="matches-heading">
+                            Matches
+                        </div>
+                    </div>
+                </div>
+                <div class="matches-data-wrapper">
+                    <% for(let i=0; i<7; i++) { %>
+                        <div class="matches-box">
+                            <a href="" class="match-data">
+                                <div class="match-title">
+                                    Valorant Masters: VLX - TR
+                                </div>
+                                <div class="match-date">
+                                    Today, Starts 20:35
+                                </div>
+                            </a>
+                        </div>
+                        <% } %>
+
+                            <!-- <div class="matches-box">
+                                <a href="" class="match-data">
+                                    <div class="match-title">
+                                        Valorant Masters: VLX - TR
+                                    </div>
+                                    <div class="match-date">
+                                        Today, Starts 20:35
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="matches-box">
+                                <a href="" class="match-data">
+                                    <div class="match-title">
+                                        Valorant Masters: VLX - TR
+                                    </div>
+                                    <div class="match-date">
+                                        Today, Starts 20:35
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="matches-box">
+                                <a href="" class="match-data">
+                                    <div class="match-title">
+                                        Valorant Masters: VLX - TR
+                                    </div>
+                                    <div class="match-date">
+                                        Today, Starts 20:35
+                                    </div>
+                                </a>
+                            </div> -->
+                </div>
+            </div>
+        </article>
+    </div>
+
+
+    <!-- Bottom -->
+    <footer>
+
+    </footer>
+</body>
+
+</html>
