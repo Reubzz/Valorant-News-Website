@@ -20,7 +20,7 @@ const model = db.MONGO_DB.model(
         createdBy: {
             userid: { type: String },
         },
-        links: { type: Array }, // Array of Links. 
+        links: { type: Object }, // Array of Links. 
 
         teams: {
             // All foreign keys 
