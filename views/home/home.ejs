@@ -107,21 +107,21 @@
                 </div>
                 <div class="tournaments-wrapper-grid">
 
-                    <% for(let i=0; i<5; i++) { %>
+                    <% tournamentsData.forEach(function(tournament) { %>
                         <a href="" class="tournament-box">
                             <div class="tournament-img-container">
-                                <img class="tournament-img" src="/Assets/imgs/vct-masters.png" />
+                                <img class="tournament-img" src="<%= tournament.logoURL %>" />
                             </div>
                             <div class="tournament-data">
                                 <div class="tournament-title">
-                                    Valorant Masters
+                                    <%= tournament.name %>
                                 </div>
                                 <div class="tournament-date">
-                                    Today, Starts 20:35
+                                    <%= tournament.organizer %>
                                 </div>
                             </div>
                         </a>
-                        <% } %>
+                        <% }) %>
 
 
                 </div>
@@ -139,49 +139,18 @@
                     </div>
                 </div>
                 <div class="matches-data-wrapper">
-                    <% for(let i=0; i<7; i++) { %>
+                    <% matchesData.forEach(function(match) { %>
                         <div class="matches-box">
                             <a href="" class="match-data">
                                 <div class="match-title">
-                                    Valorant Masters: VLX - TR
+                                    <%= match.team1.id %> vs <%= match.team2.id %>
                                 </div>
                                 <div class="match-date">
-                                    Today, Starts 20:35
+                                    <%= match.startDate %>
                                 </div>
                             </a>
                         </div>
-                        <% } %>
-
-                            <!-- <div class="matches-box">
-                                <a href="" class="match-data">
-                                    <div class="match-title">
-                                        Valorant Masters: VLX - TR
-                                    </div>
-                                    <div class="match-date">
-                                        Today, Starts 20:35
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="matches-box">
-                                <a href="" class="match-data">
-                                    <div class="match-title">
-                                        Valorant Masters: VLX - TR
-                                    </div>
-                                    <div class="match-date">
-                                        Today, Starts 20:35
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="matches-box">
-                                <a href="" class="match-data">
-                                    <div class="match-title">
-                                        Valorant Masters: VLX - TR
-                                    </div>
-                                    <div class="match-date">
-                                        Today, Starts 20:35
-                                    </div>
-                                </a>
-                            </div> -->
+                        <% }) %>
                 </div>
             </div>
         </article>
