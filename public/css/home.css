@@ -3,9 +3,26 @@
 }
 
 body {
-  background: #252525;
+  background: #0f0f0f;
   padding: 20px;
   margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff6666;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #db3a3a;
 }
 
 .container {
@@ -28,7 +45,7 @@ nav .branding {
   flex-direction: column;
   align-items: flex-start;
   border-radius: 8px;
-  background: #2c2c2c;
+  background: #1a1a1a;
 }
 nav .branding .branding-container {
   display: flex;
@@ -42,7 +59,7 @@ nav .branding .branding-container .branding-img {
   height: 20px;
 }
 nav .branding .branding-container .branding-name {
-  color: #f0f5f5;
+  color: #F0F5F5;
   font-size: 20px;
   font-family: Inter;
   font-style: normal;
@@ -58,7 +75,7 @@ nav .menu {
   flex-shrink: 0;
   flex-grow: 1;
   border-radius: 8px;
-  background: #2c2c2c;
+  background: #1a1a1a;
 }
 nav .menu ul {
   padding: 0;
@@ -95,7 +112,7 @@ nav .menu ul li .menu-item .menu-icons {
   height: 28px;
 }
 nav .menu ul li .menu-item .menu-item-text {
-  color: #f0f5f5;
+  color: #F0F5F5;
   font-size: 20px;
   font-family: Inter;
   font-style: normal;
@@ -104,6 +121,7 @@ nav .menu ul li .menu-item .menu-item-text {
 }
 nav .menu ul .selected {
   background: #353535;
+  box-shadow: rgba(0, 0, 0, 0.1019607843) 0px 10px 15px -3px, rgba(0, 0, 0, 0.0509803922) 0px 4px 6px -2px;
 }
 nav .menu ul .selected .menu-item-text {
   font-weight: 700 !important;
@@ -120,7 +138,7 @@ main .headline-container {
   width: 750px;
   height: 360px;
   position: relative;
-  background: linear-gradient(0deg, #2c2c2c 0%, #2c2c2c 100%);
+  background: linear-gradient(0deg, #1a1a1a 0%, #1a1a1a 100%);
   border-radius: 8px;
   overflow: hidden;
   background-image: url("/Assets/imgs/headline-img.jpg");
@@ -215,7 +233,7 @@ main .more-news-container .more-news-wrapper .news-wrapper {
 main .more-news-container .more-news-wrapper .news-wrapper .news {
   align-self: stretch;
   padding: 24px;
-  background: #2C2C2C;
+  background: #1a1a1a;
   border-radius: 8px;
   overflow: hidden;
   justify-content: flex-start;
@@ -295,7 +313,7 @@ main .tournaments-container .tournaments-wrapper-grid .tournament-box {
   flex: 1 1 0;
   height: 100px;
   padding: 15px 16px;
-  background: #2C2C2C;
+  background: #1a1a1a;
   border-radius: 8px;
   overflow: hidden;
   justify-content: flex-start;
@@ -307,7 +325,7 @@ main .tournaments-container .tournaments-wrapper-grid .tournament-box {
 main .tournaments-container .tournaments-wrapper-grid .tournament-box .tournament-img-container {
   aspect-ratio: 1/1;
   padding: 16px;
-  background: #393939;
+  background: #1e1e1e;
   border-radius: 8px;
   justify-content: flex-start;
   align-items: center;
@@ -350,8 +368,8 @@ article .matches-container {
 article .matches-container .matches-heading-wrapper {
   height: 70px;
   width: 100%;
-  padding: 8px 10px;
-  background: #2C2C2C;
+  padding: 8px 24px;
+  background: #1a1a1a;
   border-radius: 8px;
   overflow: hidden;
   flex-direction: column;
@@ -378,6 +396,7 @@ article .matches-container .matches-heading-wrapper .matches-heading-data .match
   word-wrap: break-word;
 }
 article .matches-container .matches-data-wrapper {
+  height: -moz-max-content;
   height: max-content;
   flex-direction: column;
   justify-content: flex-start;
@@ -389,7 +408,7 @@ article .matches-container .matches-data-wrapper {
 article .matches-container .matches-data-wrapper .matches-box {
   align-self: stretch;
   padding: 24px;
-  background: #2C2C2C;
+  background: #1a1a1a;
   border-radius: 8px;
   overflow: hidden;
   justify-content: flex-start;
