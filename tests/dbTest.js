@@ -1,4 +1,7 @@
 const matchesSchema = require('../models/schemas/matches.js')
+const tournamentSchema = require('../models/schemas/tournaments.js')
+const newsSchema = require('../models/schemas/news.js')
+const teamsSchema = require('../models/schemas/teams.js')
 const mongoose = require('mongoose')
 
 // const generateId = require('../models/functions/uniqueID.js')
@@ -44,7 +47,7 @@ function matchesTestData({
         completed: completed
     })
     
-    // newSave.save();
+    newSave.save();
 
 }    
 
@@ -62,16 +65,37 @@ function tournamentTestData({
 
     createdAt,
     userID,
-    links = [],
+    links = {},
     teams = {
         invited: [],
         playing: [],
         disqualified: []
     }
 } = {}) {
-    
+    const newSave = new tournamentSchema ({
+        id: id,
+        name: name,
+        logoURL: logoURL,
+        prizepool: prizepool,
+
+        startDate: startDate,
+        endDate: endDate,
+
+        organizer: organizer, // Possible Foreign Key in future
+
+        location: location, // Online / Offline / Irl Location
+        createdAt: createdAt,
+        createdBy: {
+            userid: userID,
+        },
+        links: links, // Array of Links. 
+
+        teams: teams
+    })
+
+    newSave.save()
 }
-function userTestData(params) {
+function teamsTestData(params) {
     
 }
 function newsTestData(params) {
@@ -81,6 +105,6 @@ function newsTestData(params) {
 module.exports = {
     matchesTestData,
     tournamentTestData,
-    userTestData,
+    teamsTestData,
     newsTestData,
 };
