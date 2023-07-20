@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Routes
-app.use('/', require(path.join(__dirname, "/routes/main.js")));
 app.use('/test', require(path.join(__dirname, "/tests/testroute.js")));
+app.use('/', require(path.join(__dirname, "/routes/main.js")));
 
 
 app.listen(process.env.PORT, () => {
