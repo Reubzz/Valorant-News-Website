@@ -492,6 +492,7 @@ article {
                 align-items: center;
                 gap: 24px;
                 display: inline-flex;
+                text-decoration: none;
                 width: 100%;
 
                 .match-data {
@@ -501,7 +502,6 @@ article {
                     gap: 8px;
                     display: inline-flex;
 
-                    text-decoration: none;
 
                     .match-title {
                         color: $text;

@@ -415,6 +415,7 @@ article .matches-container .matches-data-wrapper .matches-box {
   align-items: center;
   gap: 24px;
   display: inline-flex;
+  text-decoration: none;
   width: 100%;
 }
 article .matches-container .matches-data-wrapper .matches-box .match-data {
@@ -423,7 +424,6 @@ article .matches-container .matches-data-wrapper .matches-box .match-data {
   align-items: flex-start;
   gap: 8px;
   display: inline-flex;
-  text-decoration: none;
 }
 article .matches-container .matches-data-wrapper .matches-box .match-data .match-title {
   color: #F0F5F5;
