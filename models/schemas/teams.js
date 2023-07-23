@@ -5,16 +5,17 @@ const db = require('../../dbs.js')
 const model = db.MONGO_DB.model(
     "team", // mongodb auto adds a "s" to name of each collection hence - team + "s" = teams
     new mongoose.Schema({
-        id: { type: String },
+        id: { type: String }, // unique primary key
         createdAt: { type: Date },
         createdBy: {
             userid: { type: String }, // Foreign Key - from users collection
         },
         name: { type: String },
+        shortName: { type: String },
         country: { type: String },
-        bannerURL: { type: String },
-        logoURL: { type: Array },
-        url: { type: String },
+        bannerURL: { type: String }, // team bannner url (shown on team page)
+        logoURL: { type: String }, // team logo url 
+        url: { type: String }, // unique url slug if any
 
         members: {
             // All Foreign Keys - from players collection
@@ -25,10 +26,10 @@ const model = db.MONGO_DB.model(
             coaches: { type: Array }, // Array of Player IDs
         },
 
-        totalWinnings: { type: Number },
+        totalWinnings: { type: String },
         totalWins: { type: Number },
         totalLoss: { type: Number },
-        links: { type: Array }, // Array of Links 
+        links: { type: Array }, // object of Links 
     })
 )
 
