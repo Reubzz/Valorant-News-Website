@@ -21,7 +21,7 @@ function matchesTestData({
 } = {}) {
 
     const newSave = new matchesSchema({
-        matchId: matchID,
+        id: matchID,
         createdAt: new Date,
         createdBy: {
             userId: userID
@@ -95,10 +95,49 @@ function tournamentTestData({
 
     newSave.save()
 }
-function teamsTestData(params) {
-    
+function teamsTestData({
+    id,
+    userID,
+    name,
+    shortName,
+    country,
+    bannerURL, 
+    logoURL,
+    url,
+    members = {},
+    totalWinnings = 0,
+    totalWins = 0,
+    totalLoss = 0,
+    links = {}
+} = {}) {
+    const newSave = new teamsSchema({
+        id: id,
+        createdAt: new Date(),
+        createdBy: {
+            userid: userID, // Foreign Key - from users collection
+        },
+        name: name,
+        shortName: shortName,
+        country: country,
+        bannerURL: bannerURL,
+        logoURL: logoURL,
+        url: url,
+
+        members: {
+            members
+        },
+
+        totalWinnings: totalWinnings,
+        totalWins: totalWins,
+        totalLoss: totalLoss,
+        links: links, //links Array of Links 
+    })
+
+    newSave.save();
 }
-function newsTestData(params) {
+function newsTestData({
+
+} = {}) {
     
 }
 
