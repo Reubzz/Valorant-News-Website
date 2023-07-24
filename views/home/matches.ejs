@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placeholder Title</title>
+
+    <link rel="stylesheet" href="/css/matches.css">
+
+    <!-- add own fontawesome link here -->
+    <script src="https://kit.fontawesome.com/4d3f484b6f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Navbar - Sticky Left -->
+        <nav>
+            <div class="branding nav-item">
+                <a href="/" class="branding-container">
+                    <img class="branding-img" src="/Assets/imgs/logo.png" alt="">
+                    <h1 class="branding-name">Valo News</h1>
+                </a>
+            </div>
+
+            <div class="menu nav-item">
+                <ul>
+                    <li class="">
+                        <a href="/" class="menu-item">
+                            <img class="menu-icons" src="/Assets/icons/home.svg" alt="home-icon">
+                            <h2 class="menu-item-text">Home</h2>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/news" class="menu-item">
+                            <img class="menu-icons" src="/Assets/icons/trello.svg" alt="news-icon">
+                            <h2 class="menu-item-text">News</h2>
+                        </a>
+                    </li>
+                    <li class="selected">
+                        <a href="/matches" class="menu-item">
+                            <img class="menu-icons" src="/Assets/icons/trello.svg" alt="matches-icon">
+                            <h2 class="menu-item-text">Matches</h2>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main content - Center -->
+        <main>
+            
+            <!-- Section - Matches -->
+            <div class="matches-container">
+                <!-- <div class="matches-heading-wrapper">
+                    <div class="matches-heading-data">
+                        <div class="matches-heading">
+                            Matches
+                        </div>
+                    </div>
+                </div> -->
+                <div class="matches-heading">
+                    MATCHES
+                </div>
+                <div class="matches-data-wrapper">
+                    <% matchesData.forEach(function(match) { %>
+                        <a href="/<%= match.id %>" class="matches-box">
+                            <div class="match-data">
+                                <div class="match-title">
+                                    <%= match.tournament.name %>: <%= match.team1.shortName %> vs <%= match.team2.shortName %>
+                                </div>
+                                <div class="match-date">
+                                    <%= match.formatedDate %>
+                                </div>
+                            </div>
+                        </a>
+                        <% }) %>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar/Advertisment - Sticky Right -->
+        <article>
+            <div class="tournaments-container">
+                <div class="tournaments-heading">
+                    TOURNAMENTS
+                </div>
+                <div class="tournaments-wrapper-grid">
+
+                    <% tournamentsData.forEach(function(tournament) { %>
+                        <a href="/<%= tournament.id %>" class="tournament-box">
+                            <div class="tournament-img-container">
+                                <img class="tournament-img" src="<%= tournament.logoURL %>" />
+                            </div>
+                            <div class="tournament-data">
+                                <div class="tournament-title">
+                                    <%= tournament.name %>
+                                </div>
+                                <div class="tournament-date">
+                                    <%= tournament.organizer %>
+                                </div>
+                            </div>
+                        </a>
+                        <% }) %>
+
+
+                </div>
+            </div>
+            
+        </article>
+    </div>
+
+
+    <!-- Bottom -->
+    <footer>
+
+    </footer>
+</body>
+
+</html>
