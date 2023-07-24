@@ -108,7 +108,7 @@
                 <div class="tournaments-wrapper-grid">
 
                     <% tournamentsData.forEach(function(tournament) { %>
-                        <a href="" class="tournament-box">
+                        <a href="/<%= tournament.id %>" class="tournament-box">
                             <div class="tournament-img-container">
                                 <img class="tournament-img" src="<%= tournament.logoURL %>" />
                             </div>
@@ -140,16 +140,16 @@
                 </div>
                 <div class="matches-data-wrapper">
                     <% matchesData.forEach(function(match) { %>
-                        <div class="matches-box">
-                            <a href="" class="match-data">
+                        <a href="/<%= match.id %>" class="matches-box">
+                            <div class="match-data">
                                 <div class="match-title">
-                                    <%= match.team1.id %> vs <%= match.team2.id %>
+                                    <%= match.tournament.name %>: <%= match.team1.shortName %> vs <%= match.team2.shortName %>
                                 </div>
                                 <div class="match-date">
-                                    <%= match.startDate %>
+                                    <%= match.formatedDate %>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                         <% }) %>
                 </div>
             </div>

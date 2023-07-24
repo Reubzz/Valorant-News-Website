@@ -11,24 +11,25 @@ const matchesDB = require('../models/schemas/matches');
 const tournamentsDB = require('../models/schemas/tournaments'); 
 const teamsDB = require('../models/schemas/teams'); 
 
+// Data Constructor Functions
+const buildMatchData = require('../models/functions/constructors/matchData.js');
+const buildTournamentData = require('../models/functions/constructors/tournamentData.js');
+
 router.get("/", async (req, res) => {
-
-    let  matchesData = await matchesDB.find({ completed: false });
-    matchesData.forEach(async (match) => {
-        match.team1.data = await teamsDB.find({ id: match.team1.id })
-        match.team2.data = await teamsDB.find({ id: match.team2.id })
-    })
-    let tournamentsData = await tournamentsDB.find().sort({ startDate: 1})
-
     res.status(200).render("home/home.ejs", {
-        matchesData: matchesData,
-        tournamentsData: tournamentsData,
+        matchesData: await buildMatchData(),
+        tournamentsData: await buildTournamentData(),
         // blogsData: 
     })
-    console.log(matchesData)
-    // console.log(tournamentsData)
 })
 
+router.get('/matches', async (req, res) => {
+    res.status(200).render("home/matches.ejs", {
+        matchesData: await buildMatchData(),
+        tournamentsData: await buildTournamentData(),
+    })
+    // res.send(await buildMatchData())
+})
 
 
 // 404 Page
