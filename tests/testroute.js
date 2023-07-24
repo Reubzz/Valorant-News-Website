@@ -19,7 +19,7 @@ router.get("/match-data", async (req, res) => {
     let options = {
         team1: req.query.t1Name,
         team2: req.query.t2Name,
-        matchID: generateId({useCase: 'game'}),
+        matchID: generateId({ useCase: 'game' }),
         team1Score: req.query.t1Score,
         team2Score: req.query.t2Score,
         completed: req.query.completed
@@ -43,7 +43,7 @@ router.get("/match-data", async (req, res) => {
 router.get("/tournament-data", async (req, res) => {
 
     let options = {
-        id: generateId({useCase: 'tournament'}),
+        id: generateId({ useCase: 'tournament' }),
         name: "Valorant Invitational",
         logoURL: "/Assets/imgs/logo.png",
         prizepool: "$ 5,000",
@@ -75,5 +75,35 @@ router.get("/tournament-data", async (req, res) => {
     res.send('done \n')
 })
 
+router.get("/team-data", async (req, res) => {
+    testData.teamsTestData({
+        id: req.query.id,
+        name: req.query.name,
+        shortName: req.query.shortName,
+        userID: "user-0123456789",
+        country: "India",
+        bannerURL: "",
+        logoURL: "",
+        url: "",
+        members: {
+            owners: [],
+            managers: [],
+            players: [],
+            substitutes: [],
+            coaches: []
+        },
+        totalWinnings: req.query.winnings,
+        totalWins: req.query.wins,
+        totalLoss: req.query.loss,
+        links: [
+            {
+                instagram: "https://instagram.com",
+                twitter: "https://twitter.com",
+                facebook: "https://facebook.com"
+            }
+        ]
+    })
+    res.status(200).send("Done")
+})
 
 module.exports = router;
